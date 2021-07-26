@@ -1,0 +1,56 @@
+# basic settings
+checkname: itracker
+ckpt_dir: '/home/wjc/PycharmProjects/MyGazeProject/results/model_dir'
+
+seed: 1
+
+# distributed
+is_distribute: True
+nodes: 1
+rank: 0
+dist_url: 'tcp://localhost:23456'
+dist_backend: 'nccl'
+cuda_visable_device: '0, 1, 2, 3'
+
+# data
+data_dir: '/home/data/wjc_data/xgaze_224_prepare_two'
+image_scale: 1
+
+# network
+model: 'ITracker_xgaze'
+pretrained: true
+dropout: 0.
+
+# train
+init_lr: 0.0001
+weight_decay: 0.0001
+batch_size: 128
+epochs: 30
+workers: 4
+resume: false
+loss: 'l1'
+optim: 'adam'
+scheduler: 'explr'
+gamma: 0.95
+step_size: 4
+use_ohem: true
+ohem_frac: 0.3
+accumulate_count: 1
+
+#load
+lr: 0.0001
+last_epoch: -1
+load_ckpt: false
+ckpt_name: model_14.pth.tar
+
+# eval
+eval: true
+eval_batch_size: 128
+eval_dist: true
+
+# log
+log_dir: '/home/wjc/PycharmProjects/MyGazeProject/results/log_dir'
+log_name: itracker
+fresh_per_iter: 30
+
+debug: false

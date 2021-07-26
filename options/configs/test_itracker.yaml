@@ -1,0 +1,29 @@
+# basic settings
+checkname: itracker
+ckpt_dir: '/home/wjc/PycharmProjects/MyGazeProject/results/model_dir'
+ckpt_name: model_10.pth.tar
+seed: 1
+
+# distributed
+cuda_visable_device: '0, 1, 2, 3'
+no_cuda : false
+
+# data
+data_dir: '/home/data/wjc_data/xgaze_224_prepare_two'
+image_scale: 1
+
+# network
+model: 'ITracker_xgaze'
+pretrained: true
+dropout: 0.
+
+#test
+batch_size: 128
+workers: 4
+
+# log
+log_dir: '/home/wjc/PycharmProjects/MyGazeProject/results/log_dir'
+fresh_per_iter: 50
+
+#debug
+debug: false
