@@ -1,0 +1,12 @@
+h5py==3.3.0
+torchvision==0.8.1+cu101
+visdom.egg==info
+loguru==0.5.3
+scipy==1.7.0
+opencv_python==4.5.2.54
+torch==1.7.0+cu101
+numpy==1.21.0
+timm==0.4.12
+Pillow==8.3.1
+PyYAML==5.4.1
+visdom==0.1.8.9
