@@ -8,19 +8,18 @@ This project is also to learn about the process of gaze estimation. Among this p
 
 More details in [requirements.txt](itracker_preprocessed_image/requirements.txt) file.
 ## File Structure
-* **itracker_preprocessed_image** 
-    * **data**   
-    This directory contains the files to process the dataset.
-    * **model**  
-    This directory contains various backbone networks, such as resnet, deit, mobilenet and so on. Meanwhile, it also contains the model we use to estimate the 3D gaze vector.
-    * **options**   
-    This directory contians several config file, which set hyperparameters, data path, model path and so on.
-    * **utils**  
-    This directory contains some useful files such as loss.py, logger.py, module.py.These file can be used to evaluate the results and record the log and so on.
-    * **scripts**  
-    This directory contains some files to train or test the model.
-    * **results**  
-    This directory stores the checkpoints and log file.
+* **data**   
+This directory contains the files to process the dataset.
+* **model**  
+This directory contains various backbone networks, such as resnet, deit, mobilenet and so on. Meanwhile, it also contains the model we use to estimate the 3D gaze vector.
+* **options**   
+This directory contians several config file, which set hyperparameters, data path, model path and so on.
+* **utils**  
+This directory contains some useful files such as loss.py, logger.py, module.py.These file can be used to evaluate the results and record the log and so on.
+* **scripts**  
+This directory contains some files to train or test the model.
+* **results**  
+This directory stores the checkpoints and log file.
 * **dataset**  
 This directory stores the preprocessed data. Detailed file structure is showed below.
 ```
@@ -64,11 +63,11 @@ python prepareXgaze.py --dataset_path [source dataset path] --outer_dataset_path
 ```
 Train itracker model
 ```
-python xgaze_main.py --data_path [preprocessed dataset path] --train True --load False
+python train_ddp.py
 ```
 Test itracker model
 ```
-python xgaze_main.py --data_path [preprocessed dataset path] --train False --load True
+python test.py 
 ```
 ## Citation
 For itracker model, please cite:
@@ -87,5 +86,16 @@ For ETH-Xgaze dataset, please cite:
   title     = {ETH-XGaze: A Large Scale Dataset for Gaze Estimation under Extreme Head Pose and Gaze Variation},
   year      = {2020},
   booktitle = {European Conference on Computer Vision (ECCV)}
+}
+```
+For preprocessed image and code, please cite:
+```
+@misc{cai2021gaze,
+      title={Gaze Estimation with an Ensemble of Four Architectures}, 
+      author={Xin Cai and Boyu Chen and Jiabei Zeng and Jiajun Zhang and Yunjia Sun and Xiao Wang and Zhilong Ji and Xiao Liu and Xilin Chen and Shiguang Shan},
+      year={2021},
+      eprint={2107.01980},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
 }
 ```
