@@ -8,19 +8,23 @@ This project is also to learn about the process of gaze estimation. Among this p
 
 More details in [requirements.txt](itracker_preprocessed_image/requirements.txt) file.
 ## File Structure
-* **itracker** 
-    * **itracker**   
-    This directory contains the itracker model.
-    * **itracker_mhsa**  
-    This directory contains the itracker module and multi-head-self-attention module.
-    * **prepareXgaze.py**   
-    This file is used to detect right and left eyes.
+* **itracker_preprocessed_image** 
+    * **data**   
+    This directory contains the files to process the dataset.
+    * **model**  
+    This directory contains various backbone networks, such as resnet, deit, mobilenet and so on. Meanwhile, it also contains the model we use to estimate the 3D gaze vector.
+    * **options**   
+    This directory contians several config file, which set hyperparameters, data path, model path and so on.
     * **utils**  
-    This directory contains some useful files to preprocess the dataset,evaluate the performance and so on.
-* **data**  
-This directory stores the preprocessed data and the checkpoints. Detailed file structure is showed below.
+    This directory contains some useful files such as loss.py, logger.py, module.py.These file can be used to evaluate the results and record the log and so on.
+    * **scripts**  
+    This directory contains some files to train or test the model.
+    * **results**  
+    This directory stores the checkpoints and log file.
+* **dataset**  
+This directory stores the preprocessed data. Detailed file structure is showed below.
 ```
-├── data			
+├── dataset		
 │   ├── train
 │   │   ├── subject0000
 │   │   │   ├── face
@@ -48,16 +52,11 @@ This directory stores the preprocessed data and the checkpoints. Detailed file s
 │   │   │   ├── left_eye
 │   │   │   ├── right_eye
 │   │   ├── ...
-│   ├── model_dir
-│   │   ├── itracker
-│   │   ├── itracker_mhsa
-│   │   ├── ...
 ```
 ## Results
  model  | train_error  | val_error  | test_error  | test_error_std
  ---- | ----- | ------ | ------ | ------  
- itracker  | 4.895 | 6.8864 | 9.6374 | 9.1396 
- itracker_mhsa  | 3.7123 | 5.6807 | 8.3635 | 8.8631  
+ itracker_preprocessed_image  | 1.4662 | 5.1491 | 5.3161 | 5.2669
 ## Usage
 Prepare the ETH-Xgaze dataset
 ```
